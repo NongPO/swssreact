@@ -1,13 +1,257 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: #706868;
+  font-size: 14px;
+  font-family: "Kanit",sans-serif;
+  font-variant: tabular-nums;
+  line-height: 1.5;
+  background-color: #f4f4f4;
+  font-feature-settings: "tnum","tnum";
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+#From.check{
+  background-color: black;
+}
+#img1{
+  text-align: left;
+}
+#col1{
+  text-align:center;
+  font-size: large;
+}
+#col0{
+  text-align: center;
+}
+  #text0 {
+
+   
+  }
+#col2{
+  border-radius: 50%;
+}
+#but1{
+  text-align: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  font-size: 17px;
+  background-color: rgb(224, 95, 95);
+}
+
+.box-container {
+  padding: 0 24px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.box-register {
+  max-width: 480px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.box-register .box-header  {
+  color: #fff;
+  height: 240px;
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #dbdbdb;
+  background-size: cover;
+  background-position: top;
+}
+
+.box-register .box-header h2 {
+  color: inherit;
+  font-size: 32px;
+  font-weight: 500;
+  margin: 0;
+}
+
+
+
+.box-login {
+  max-width: 480px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+
+
+.box-login .box-header {
+  color: #fff;
+  height: 240px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #dbdbdb;
+  background-size: cover;
+  background-position: top;
+}
+
+
+.box-login .box-body {
+  padding: 40px;
+}
+
+
+
+.primary-footer {
+  background-color: #e21c23;
+  padding: 24px;
+  display: flex;
+  z-index: 2;
+}
+.logo {
+  background: none;
+  margin: 0 24px 0 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.a {
+  color: #e21c23;
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: color .3s;
+  -webkit-text-decoration-skip: objects;
+}
+.img {
+  width: 160px;
+  height: auto;
+  display: block;
+}
+.footer-menu-wrap {
+  margin-left: auto;
+}
+.footer-menu {
+  list-style: none;
+  margin: 0 -12px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer-primary-menu {
+  font-size: 16px;
+  font-weight: 500;
+}
+.footer-menu li {
+  padding: 0 12px;
+}
+.footer-menu li a {
+  color: #fff;
+}
+
+.secondary-footer {
+  background-color: #cb191f;
+  padding: 16px 24px;
+  display: flex;
+  z-index: 2;
+}
+.socials {
+  list-style: none;
+  margin: 0 -8px;
+  padding: 0;
+  display: flex;
+}
+.socials li {
+  padding: 0 8px;
+  
+}
+
+.secondary-footer .column-menu {
+  margin-left: auto;
+}
+.footer-secondary-menu {
+  font-size: 16px;
+}
+.footer-menu li a {
+  color: #fff;
+}
+.footer-menu li {
+  padding: 0 12px;
+}
+.ant-space {
+  display: inline-flex;
+}
+.secondary-footer .column-menu {
+  margin-left: auto;
+}
+.socials li {
+  padding: 0 8px;
+}
+.ant-space-align-center {
+  align-items: center;
+}
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+.ant-space {
+  display: inline-flex;
+}
+.footer-menu {
+  list-style: none;
+  margin: 0 -12px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.ant-form-item-children {
+  position: relative;
+}
+.box-register .gender-radio-group {
+  display: flex;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+.box-register .gender-radio-group .ant-radio-button-wrapper {
+  line-height: 1.25;
+  height: auto;
+  margin: 0 8px;
+  padding: 12px 32px;
+  border-radius: 30px;
+  border: 1px solid #d2d2d2;
+  outline: none;
+}
+.ant-radio-button-wrapper>.ant-radio-button {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-left: 0;
+}
+.box-register .gender-radio-group .ant-radio-button-wrapper {
+  line-height: 1.25;
+  height: auto;
+  margin: 0 8px;
+  padding: 12px 32px;
+  border-radius: 30px;
+  border: 1px solid #d2d2d2;
+  outline: none;
+}
+.ant-form input, .ant-form input {
+  line-height: normal;
+}
+.box-register .confirm-checkbox .ant-checkbox-inner, .box-register .confirm-checkbox .ant-checkbox:after {
+  border-radius: 50%;
+}
+.form-check-label:hover {
+  cursor: pointer;
+}
+
+
+
+
