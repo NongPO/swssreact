@@ -1,3 +1,5 @@
+
+
 body {
   margin: 0;
   color: #706868;
@@ -8,7 +10,9 @@ body {
   background-color: #f4f4f4;
   font-feature-settings: "tnum","tnum";
 }
-
+body, input {
+  font-weight: 300;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -251,6 +255,333 @@ img {
 .form-check-label:hover {
   cursor: pointer;
 }
+.site-header {
+  height: 72px;
+  background-color: #fff;
+  padding: 0 0 0 24px;
+  box-shadow: 0 2px 15px rgba(0,0,0,.05);
+  display: flex;
+  position: fixed;
+  width: 100%;
+}
+.ant-layout-header {
+  height: 64px;
+  padding: 0 50px;
+  line-height: 64px;
+  background: #001529;
+}
+.logo {
+  background: none;
+  margin: 0 24px 0 0!important;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+a {
+  color: #e21c23;
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: color .3s;
+  -webkit-text-decoration-skip: objects;
+}
+.logo svg{
+  width: 105px;
+  display: block;
+}
+.header-right {
+  margin-left: auto;
+}
+.header-actions {
+  display: flex;
+}
+.ant-space-align-center {
+  align-items: center;
+}
+.ant-space {
+  display: inline-flex;
+}
+.header-location-menu {
+  border-right: 1px solid #f4f4f4;
+}
+.header-user-menu >.ant-menu-item, .header-user-menu >.ant-menu-submenu {
+  margin-top: 0;
+  border-bottom: none;
+}
+.header-user-menu >.ant-menu-submenu .ant-menu-submenu-title {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.ant-menu-item, .ant-menu-submenu-title {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0 20px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color .3s cubic-bezier(.645,.045,.355,1),border-color .3s cubic-bezier(.645,.045,.355,1),background .3s cubic-bezier(.645,.045,.355,1),padding .15s cubic-bezier(.645,.045,.355,1);
+}
+.header-user-menu >.ant-menu-item {
+  padding-left: 28px;
+  padding-right: 28px;
+}
+.header-user-menu >li {
+  font-size: 18px;
+  font-weight: 400;
+  top: 0;
+  line-height: 72px;
+  border-left: 1px solid #f4f4f4;
+}
+.ant-menu-horizontal>.ant-menu-item>a {
+  display: block;
+  color: #787878;
+}
+.menu-title-wrapper {
+  display: flex;
+  align-items: center;
+}
+.header-button {
+  min-width: 140px;
+}
+a.ant-btn, a.ant-btn-lg {
+  line-height: 46px;
+}
+.ant-space-align-center {
+  align-items: center;
+}
+.ant-space {
+  display: inline-flex;
+}
+.header-user-menu >.ant-menu-submenu .ant-menu-submenu-title {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.ant-menu-horizontal {
+  line-height: 46px;
+  white-space: nowrap;
+  border: 0;
+  border-bottom: 1px solid #e8e8e8;
+  box-shadow: none;
+}
+.header-button {
+  min-width: 140px;
+}
+
+a.ant-btn, a.ant-btn-lg {
+  line-height: 46px;
+}
+a.ant-btn {
+  padding-top: .1px;
+}
+.ant-btn, .ant-btn:active, .ant-btn:focus {
+  outline: 0;
+}
+.ant-btn {
+  line-height: 1.499;
+  position: relative;
+  display: inline-block;
+  font-weight: 300;
+  white-space: nowrap;
+  text-align: center;
+  background-image: none;
+  box-shadow: 0 2px 0 rgba(0,0,0,.015);
+  cursor: pointer;
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+  height: 48px;
+  padding: 0 15px;
+  font-size: 14px;
+  border-radius: 50px;
+  color: #e21c23;
+  background-color: #fff;
+  border: 1px solid #e21c23;
+}
+.ant-btn-primary {
+  color: #fff;
+  background-color: #e21c23;
+  border-color: #e21c23;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.12);
+  box-shadow: 0 2px 0 rgba(0,0,0,.045);
+}
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+.header-location-menu {
+  border-right: 1px solid #f4f4f4;
+}
+.ant-menu-horizontal {
+  line-height: 46px;
+  white-space: nowrap;
+  border: 0;
+  border-bottom: 1px solid #e8e8e8;
+  box-shadow: none;
+}
+ol, ul, dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+ol, ul {
+  padding-left: 2rem;
+}
+.ant-menu {
+  box-sizing: border-box;
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5;
+  font-feature-settings: "tnum","tnum";
+  margin: 0;
+  padding: 0;
+  color: #787878;
+  line-height: 0;
+  list-style: none;
+  background: #fff;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  transition: background .3s,width .3s cubic-bezier(.2,0,0,1) 0s;
+  zoom: 1;
+}
+
+#page {
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.site-body {
+  margin-top: 72px;
+}
+
+.ant-layout {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  min-height: 0;
+  background: #f0f2f5;
+}
+.ant-layout, .ant-layout * {
+  box-sizing: border-box;
+}
+.ant-layout-content {
+  flex: auto;
+  min-height: 0;
+}
+
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+.page-banner{
+  position: relative;
+}
+
+.banner-wrap {
+  color: #fff;
+  padding: 100px 0;
+  background-image: linear-gradient(180deg,#ff807c,#fd4b47);
+}
+
+.page-banner .ribbon {
+  position: absolute;
+  right: 0;
+  bottom: 32px;
+  min-width: 160px;
+  z-index: 5;
+}
+
+.container, .container-fluid {
+  padding: 0 24px;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.ant-spin-nested-loading {
+  position: relative;
+}
+
+.ant-spin-container {
+  position: relative;
+  transition: opacity .3s;
+}
+
+.ant-row-flex-middle {
+  align-items: center;
+}
+.ant-row-flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+
+.banner-wrap .banenr-content .heading {
+  color: inherit;
+  font-size: 50px;
+  line-height: 1.25;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.banner-wrap .banenr-content .content {
+  font-size: 20px;
+  line-height: 1.2;
+  margin-top: 24px;
+}
+
+
+.banner-wrap .banenr-content .action  {
+  margin-top: 48px;
+}
+
+.banner-wrap .to-delivery-wrapper .image-btn-en  {
+  width: 100%;
+  height: 82px;
+  content: url('./images/button/EN_normal.svg');
+}
+page-banner .ribbon {
+  position: absolute;
+  right: 0;
+  bottom: 32px;
+  min-width: 160px;
+  z-index: 5;
+}
+button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

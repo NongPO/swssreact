@@ -1,21 +1,33 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import BodyLogin from ".././src/Components/BodyLogin"
-import Register from './Pages/Register';
-import Login from './Pages/Login';
+
+import HomeRegis from './Pages/HomeRegis';
+import HomeLogin from './Pages/HomeLogin';
 import Home from './Pages/Home';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+
+} from "react-router-dom";
 
 
 function App() {
   return (
-   <div >
-   {/*  <Register /> */}
-   <Home/>
-   {/* <Login/> */}
-       
+    <React.Fragment>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/register" component={HomeRegis} />
+          <Route exact path="/login" component={HomeLogin} />
+          <Redirect to="/" />
+        </Switch>
+      </Router>
+      
+    </React.Fragment>
 
-
-    </div>
   );
 }
 

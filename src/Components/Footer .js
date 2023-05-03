@@ -19,47 +19,47 @@ import { FacebookOutlined } from "@ant-design/icons";
 export default function App() {
   return (
     <div id="footer">
-      <footer class="primary-footer ant-layout-footer">
-        <div class="logo">
-          <a href="/" class="nuxt-link-active">
-            <img src={Logo} class="img" alt="Hollywood Sign on The Hill" />
+      <footer className="primary-footer ant-layout-footer">
+        <div className="logo">
+          <a href="/" className="nuxt-link-active">
+            <img src={Logo} className="img" alt="Hollywood Sign on The Hill" />
           </a>
         </div>
-        <div class="footer-menu-wrap ant-space ant-space-horizontal ant-space-align-center">
-          <div class="ant-space-item">
-            <ul class="footer-menu footer-primary-menu">
+        <div className="footer-menu-wrap ant-space ant-space-horizontal ant-space-align-center">
+          <div className="ant-space-item">
+            <ul className="footer-menu footer-primary-menu">
               <li>
-                <a href="#" class>
+                <a href="#" className>
                   ไอศกรีมของฉัน
                 </a>
               </li>
               <li>
-                <a href="#" class>
+                <a href="#" className>
                   สิทธิพิเศษ
                 </a>
               </li>
               <li>
-                <a href="#" class>
+                <a href="#" className>
                   รีวอร์ด
                 </a>
               </li>
               <li>
-                <a href="#" class>
+                <a href="#" className>
                   คูปองของฉัน
                 </a>
               </li>
               <li>
-                <a href="#" class>
+                <a href="#" className>
                   บัตรกำนัลเงินสด
                 </a>
               </li>
               <li>
-                <a href="#" class>
+                <a href="#" className>
                   บัตรสเวนเซ่นส์การ์ด
                 </a>
               </li>
               <li>
-                <a href="#" class>
+                <a href="#" className>
                   ข้อมูลของฉัน
                 </a>
               </li>
@@ -67,17 +67,17 @@ export default function App() {
           </div>
         </div>
       </footer>
-      <footer class="secondary-footer ant-layout-footer">
-        <div class="column-social ant-space ant-space-horizontal ant-space-align-center">
-          <div class="ant-space-item">
-            <ul class="socials">
+      <footer className="secondary-footer ant-layout-footer">
+        <div className="column-social ant-space ant-space-horizontal ant-space-align-center">
+          <div className="ant-space-item">
+            <ul className="socials">
               <li>
-                <a href="#" class>
-                  <MDBBtn  floating size="sm" tag="a" >
+                <a href="#" className>
+                  <MDBBtn floating size="sm" tag="a">
                     <MDBIcon fab icon="facebook-f" />
                   </MDBBtn>
                   <MDBBtn
-                  id="md1"
+                    id="md1"
                     floating
                     style={{ backgroundColor: "#ac2bac" }}
                     size="sm"
@@ -85,28 +85,26 @@ export default function App() {
                   >
                     <MDBIcon fab icon="instagram" />
                   </MDBBtn>
-                  <MDBBtn id="md1"  floating color="dark" size="sm" tag="a">
+                  <MDBBtn id="md1" floating color="dark" size="sm" tag="a">
                     <MDBIcon fab icon="apple" />
                   </MDBBtn>
                 </a>
               </li>
             </ul>
           </div>
-          <div class="column-menu ant-space ant-space-horizontal ant-space-align-center">
-            <div class="ant-space-item">
-              <ul class="footer-menu footer-secondary-menu">
-                <li href="#" class>
-                  <a href="#" >
-                    คำถามที่พบบ่อย
-                  </a>
+          <div className="column-menu ant-space ant-space-horizontal ant-space-align-center">
+            <div className="ant-space-item">
+              <ul className="footer-menu footer-secondary-menu">
+                <li href="#" className>
+                  <a href="#">คำถามที่พบบ่อย</a>
                 </li>
-                <li href="#" class>
-                  <a href="#" class>
+                <li href="#" className>
+                  <a href="#" className>
                     ข้อกำหนดการใช้งาน
                   </a>
                 </li>
-                <li href="#" class>
-                  <a href="#" class>
+                <li href="#" className>
+                  <a href="#" className>
                     นโยบายความเป็นส่วนตัว
                   </a>
                 </li>

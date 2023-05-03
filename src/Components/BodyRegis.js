@@ -1,6 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import Check from "./Check";
+import { Link, useHistory, useLocation } from "react-router-dom";
+import { unwrapResult } from "@reduxjs/toolkit";
+import {
+  authRegister,
+} from "../features/slices/AuthSlice";
 import {
   Button,
   Form,
@@ -16,8 +21,12 @@ import {
 import CardHeaderImage from "../images/card-head.png";
 import { InfoCircleOutlined } from "@ant-design/icons";
 import { MDBCheckbox } from "mdb-react-ui-kit";
+import { useSelector, useDispatch } from "react-redux";
 
 function Body() {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const location = useLocation();
   const App = () => <Checkbox onChange={onChange}>Checkbox</Checkbox>;
   const onChange = (e) => {
     console.log(`checked = ${e.target.checked}`);
@@ -59,28 +68,32 @@ function Body() {
       },
     ],
   };
-  const onFinish = (fieldsValue) => {
+  const onFinish = async (fieldsValue) => {
     // Should format date value before submit.
     const rangeValue = fieldsValue["range-picker"];
     const rangeTimeValue = fieldsValue["range-time-picker"];
     const values = {
       ...fieldsValue,
-      "date-picker": fieldsValue["date-picker"].format("YYYY-MM-DD"),
-      "date-time-picker": fieldsValue["date-time-picker"].format(
-        "YYYY-MM-DD HH:mm:ss"
-      ),
-      "month-picker": fieldsValue["month-picker"].format("YYYY-MM"),
-      "range-picker": [
-        rangeValue[0].format("YYYY-MM-DD"),
-        rangeValue[1].format("YYYY-MM-DD"),
-      ],
-      "range-time-picker": [
-        rangeTimeValue[0].format("YYYY-MM-DD HH:mm:ss"),
-        rangeTimeValue[1].format("YYYY-MM-DD HH:mm:ss"),
-      ],
-      "time-picker": fieldsValue["time-picker"].format("HH:mm:ss"),
+      birthdate: fieldsValue["birthdate"].format("YYYY-MM-DD"),
+
     };
     console.log("Received values of form: ", values);
+    try
+    {
+      const resultAction = await dispatch(authRegister({ data: values }));
+      unwrapResult(resultAction);
+      if (resultAction.payload.error) {
+        console.log(resultAction.payload.error_description);
+      }else{
+
+        history.push("/"); //goto home
+      }
+
+    }catch (err) {
+      console.error("Failed to save the post: ", err);
+    } finally {
+    }
+
   };
 
   const [form] = Form.useForm();
@@ -88,9 +101,14 @@ function Body() {
   const onRequiredTypeChange = ({ requiredMarkValue }) => {
     setRequiredMarkType(requiredMarkValue);
   };
+  const onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+  };
+
+
 
   return (
-    <div className="body" style={{ padding: "40px 0px" }}>
+    <div className="site-body ant-layout" style={{ padding: "40px 0px" }}>
       <div className="box-container">
         <div className="box-login">
           <div
@@ -109,66 +127,105 @@ function Body() {
               }}
               onValuesChange={onRequiredTypeChange}
               requiredMark={requiredMark}
+              onFinish={onFinish}
+              onFinishFailed={onFinishFailed}
+              method="post"
             >
               <Form.Item
-                label="อีเมลล์"
+                label="ชื่อ"
                 required
                 tooltip="This is a required field"
+                name="firstname"
+                rules={[
+                  {
+                    required: true,
+                    
+                    message: "The input is not valid firstname!",
+                  },
+                ]}
               >
-                <Input placeholder="กรอกอีเมลล์" />
-              </Form.Item>
-              <Form.Item
-                label="กรอกรหัสผ่าน"
-                tooltip={{
-                  title: "Tooltip with customize icon",
-                  icon: <InfoCircleOutlined />,
-                }}
-              >
-                <Input placeholder="กรอกรหัสผ่าน" />
+                <Input placeholder="กรอกชื่อจริง" />
               </Form.Item>
 
               <Form.Item
-                label="อีเมลล์"
+                label="นามสกุล"
                 required
+                tooltip="This is a required field"
+                name="lastname"
+                rules={[
+                  {
+                    required: true,
+                    message: "The input is not valid lastname!",
+                  },
+                ]}
+              >
+                <Input placeholder="กรอกนามสกุล" />
+              </Form.Item>
+
+              
+
+              <Form.Item
+                label="เบอร์โทรศัพท์"
+                required
+                tooltip="This is a required field"
+                name="Contract"
+                rules={[
+                  {
+                    required: true,
+                    message: "The input is not valid email",
+                  },
+                ]}
+              >
+                <Input placeholder="กรอกอีเมลล์" />
+              </Form.Item>
+
+
+              <Form.Item
+                label="อีเมลล์"
+                name="email"
+                rules={[
+                  {
+                    required: true,
+                    type: "email",
+                    message: "The input is not valid E-mail!",
+                  },
+                ]}
                 tooltip="This is a required field"
               >
                 <Input placeholder="กรอกอีเมลล์" />
               </Form.Item>
               <Form.Item
                 label="กรอกรหัสผ่าน"
+                name="password"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your password!",
+                  },
+                  {
+                    min: 8,
+                    message: "Password must be minimum 8 characters.",
+                  },
+                ]}
                 tooltip={{
                   title: "Tooltip with customize icon",
                   icon: <InfoCircleOutlined />,
                 }}
               >
-                <Input placeholder="กรอกรหัสผ่าน" />
+                <Input.Password placeholder="กรอกรหัสผ่าน" />
               </Form.Item>
-              <Form></Form>
+             
               <Form.Item label="เพศ (ไม่ระบุได้)" name="requiredMarkValue">
                 <Radio.Group>
-                  <Radio.Button value="optional">ชาย</Radio.Button>
-                  <Radio.Button value>หญิง</Radio.Button>
-                  <Radio.Button value={false}>อื่นๆ</Radio.Button>
+                  <Radio.Button value="ชาย">ชาย</Radio.Button>
+                  <Radio.Button value="หญิง">หญิง</Radio.Button>
+                  <Radio.Button value="อื่นๆ">อื่นๆ</Radio.Button>
                 </Radio.Group>
               </Form.Item>
-              <Form
-                name="time_related_controls"
-                {...formItemLayout}
-                onFinish={onFinish}
-                style={{
-                  maxWidth: 600,
-                }}
-              ></Form>
+              
 
-              <Form.Item name="date-picker" label="DatePicker" {...config}>
+              <Form.Item name="birthdate" label="วัน-เดือน-ปีเกิด" {...config}>
                 <DatePicker />
-              </Form.Item>
-              <Form.Item
-                name="date-time-picker"
-                label="DatePicker[showTime]"
-                {...config}
-              >
-                <DatePicker showTime format="YYYY-MM-DD HH:mm:ss" />
               </Form.Item>
               <MDBCheckbox
                 name="flexCheck"
@@ -190,7 +247,7 @@ function Body() {
                 <Row>
                   <Col style={{ width: "100%" }}>
                     <Space direction="vertical" style={{ width: "100%" }}>
-                      <Button style={{fontSize:'16px'}} type="primary" danger shape="round" block>
+                      <Button style={{fontSize:'16px'}} type="primary" danger shape="round" block  htmlType="submit">
                        สมัครสมาชิก
                       </Button>
                     </Space>
@@ -200,39 +257,7 @@ function Body() {
             </Form>
           </div>
 
-          {/*        <MDBRow center>
-          <MDBCol >   
-                <MDBRow>
-                  <MDBCol md="10">
-                    <label>อีเมล</label>
-                    <MDBInput
-                      wrapperClass="mb-4"
-                      label="กรอกอีเมล"
-                      size="lg"
-                      id="form1"
-                      type="text"
-                    />
-                  </MDBCol>
-                    <br/>
-                  <MDBCol md="10 " id="col2" >
-                    <label>รหัสผ่าน</label>
-                    <MDBInput
-                      wrapperClass="mb-4"
-                      label="กรอกรหัสผ่าน"
-                      size="lg"
-                      id="form1"
-                      type="text"
-                    />
-                  </MDBCol>
-
-                  <MDBCol md="10 " id="col2" >
-                  <Button type="primary" danger ghost shape="round"  id="but1" >
-            เข้าสู่ระบบ
-            </Button>
-                  </MDBCol>
-                </MDBRow>
-          </MDBCol>
-        </MDBRow> */}
+          
         </div>
       </div>
     </div>

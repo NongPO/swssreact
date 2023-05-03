@@ -1,18 +1,16 @@
 import React from 'react'
-import BodyLogin from '.././Components/BodyLogin'
-import Navbar from '.././Components/Navbar'
+import Navbar from '../Components/Navbar'
 import Footer from "../Components/Footer "
-import BodyRegis from '../Components/BodyRegis'
+import Bodymain from '../Components/Bodymain'
 
 
 function Home() {
   return (
-    <div>
-        <Navbar/>
-        <BodyRegis/>
-        <Footer/>
-      
-    </div>
+    <section class="ant-layout" id="page">
+      <Navbar/>
+      <Bodymain/>
+      <Footer/>
+    </section>
   )
 }
 

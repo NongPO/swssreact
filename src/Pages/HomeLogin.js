@@ -1,11 +1,16 @@
 import React from 'react'
+import BodyLogin from '.././Components/BodyLogin'
+import Navbar from '.././Components/Navbar'
+import Footer from "../Components/Footer "
 
 
 function HomeLogin() {
   return (
-    <div>
-      
-    </div>
+    <section class="ant-layout" id="page">
+      <Navbar/>
+      <BodyLogin/>
+      <Footer/>
+    </section>
   )
 }
 
